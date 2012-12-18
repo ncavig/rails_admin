@@ -131,6 +131,18 @@ module RailsAdmin
       end.html_safe
     end
 
+    def javascript_tag(*params)
+      super.gsub(/[^\/]+\/assets/, 'assets').html_safe
+    end
+
+    def javascript_include_tag(*params)
+      super.gsub(/[^\/]+\/assets/, 'assets').html_safe
+    end
+
+    def stylesheet_link_tag(*params)
+      super.gsub(/[^\/]+\/assets/, 'assets').html_safe
+    end
+
   end
 end
 
