@@ -131,6 +131,10 @@ module RailsAdmin
       end.html_safe
     end
 
+    def image_tag(*params)
+      super.gsub('/biboran', '').html_safe
+    end
+
     def javascript_tag(*params)
       super.gsub(/[^\/]+\/assets/, 'assets').html_safe
     end
